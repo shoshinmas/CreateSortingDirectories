@@ -9,24 +9,23 @@ import java.util.Arrays;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.attribute.BasicFileAttributes;
-import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 public class FileSortByExtension {
     public static void main(String[] args) {
-        File file = new File(".");
+        File file = new File("HOME");
 
         // Excludes directory in the list
         File[] files = file.listFiles(File::isFile);
 
-        if (files != null) {
+        if (files != null) {s
             // Sort in ascending order.
             Arrays.sort(files, EXTENSION_COMPARATOR);
             FileSortByExtension.moveFiles(files);
         }
     }
 
-    private static void moveFiles(File[] files) {
+    public static void moveFiles(File[] files) {
         for (File file : files) {
             Path filePath = file.toPath();
             BasicFileAttributes attributes = Files.readAttributes(filePath, BasicFileAttributes.class);

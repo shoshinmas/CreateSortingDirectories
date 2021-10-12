@@ -6,9 +6,10 @@ public class App
     public static void main( String[] args )
     {
         CreateDirectories directories = new CreateDirectories();
-        if (directories.listFilesForFolder(File "HOME") == 1)
+        FileSortByExtension file = new FileSortByExtension();
+        if (directories.listFilesForFolder(new File("HOME")) == true)
         {
-            FileSortByExtension();
+            FileSortByExtension.moveFiles(new File["HOME"]);
         }
     }
 

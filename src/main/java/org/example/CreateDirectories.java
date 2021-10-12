@@ -19,13 +19,12 @@ public class CreateDirectories {
         else
             System.out.println("Directory was not created successfully: " + dir1);
     }
-    public void listFilesForFolder(final File folder) {
+    public boolean listFilesForFolder(final File folder) {
         for (final File fileEntry : folder.listFiles()) {
             if (fileEntry.isDirectory()) {
                 listFilesForFolder(fileEntry);
-            } else {
-                System.out.println(fileEntry.getName());
             }
+
         }
-    }
+        return true;}
 }
